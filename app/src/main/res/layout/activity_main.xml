@@ -1,18 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="6dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_hal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Hal : " />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_rahasia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_hal"
+        android:text="Rahasia"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/tv_tanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Palembang, 28 Sept 2022"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_kepada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/tv_rahasia"
+        android:text="Kepada :" />
+
+    <Spinner
+        android:id="@+id/sp_kepada_siapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_kepada"
+        android:entries="@array/arr_kepada" />
+
+    <Button
+        android:id="@+id/btn_click_here"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="CLICK HERE" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cbox_yakin"
+        android:layout_below="@id/btn_click_here"
+        android:text="Yakin" />
+
+    <CheckBox
+        android:id="@+id/cbox_yakin_banget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_click_here"
+        android:layout_toRightOf="@id/cbox_yakin"
+        android:text="Yakin Banget" />
+
+    <CheckBox
+        android:id="@+id/cbox_ga_yakin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_click_here"
+        android:layout_toRightOf="@id/cbox_yakin_banget"
+        android:text="Ga Yakin" />
+
+    <Button
+        android:id="@+id/btn_keluar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="Keluar" />
+
+</RelativeLayout>
